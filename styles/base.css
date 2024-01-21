@@ -55,12 +55,14 @@ nav {
   top: 20px;
   right: 200px;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: none;
 }
 .hidden {
   display: none;
+}
+
+.show {
+  display: block;
 }
 
 .inner-links {
