@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "hell-builder";
+  src: url(../Fonts/HellBuilderRegular.ttf);
+}
+
+:root {
+  --background-image: url(../images/Background.png);
+  --body-font: "Roboto", sans-serif;
+}
+
+body {
+  background-image: var(--background-image);
+  color: white;
+  max-width: 1440px;
+  background-repeat: no-repeat;
+}
+
+nav {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  grid-column: 2/1;
+  position: relative;
+  top: 75px;
+  left: 200px;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  grid-column: -2/3;
+  position: relative;
+  top: 75px;
+  left: 50px;
+}
+
+.what {
+  cursor: pointer;
+}
+.about-inner-links {
+  background: #fff;
+  background-repeat: no-repeat;
+  height: 126px;
+  width: 198px;
+  position: relative;
+  top: 20px;
+  right: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.hidden {
+  display: none;
+}
+
+.inner-links {
+  color: #000;
+  font-family: var(--body-font);
+  font-size: 16px;
+  position: relative;
+  left: 25px;
+}
+
+.logo {
+  height: 250px;
+  grid-column: 3/2;
+  position: relative;
+  left: 40px;
+}
+
+.twitter {
+  height: 50px;
+  position: relative;
+  bottom: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: 20px;
+  font-size: 18px;
+}
+
+p {
+  max-width: 420px;
+  font-family: var(--body-font);
+  text-align: center;
+  line-height: 30px;
+  margin: 30px auto;
+}
+
+span a {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: hell-builder;
+  font-size: 60px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.main-video {
+  height: 500px;
+  width: 1000px;
+  border-radius: 10px;
+  margin-top: 40px;
+  position: relative;
+  left: 220px;
+}
+
+.sub-video > * {
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+  position: relative;
+  left: 320px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.footer-images {
+  width: 1060px;
+  height: 517.39px;
+  position: relative;
+  top: 200px;
+}
+
+.footer-image-one {
+  width: 451px;
+  height: 249.39px;
+  position: relative;
+  left: 300px;
+  bottom: 80px;
+}
+
+.footer-image-two {
+  width: 597px;
+  height: 337px;
+  position: relative;
+  top: 190px;
+  left: 270px;
+}
+
+.footer-twitter {
+  position: relative;
+  left: 500px;
+  bottom: 40px;
+}

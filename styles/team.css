@@ -1,0 +1,36 @@
+@import url("base.css");
+
+h2 {
+  margin-top: -20px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 24px;
+  font-family: var(--body-font);
+  font-weight: 500;
+}
+
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 20px;
+}
+
+.team-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+}
+
+.team-section img {
+  height: 320px;
+  width: 320px;
+  margin-top: 50px;
+}
+
+.team-section a {
+  height: 58px;
+  width: 270px;
+  margin-top: 30px;
+  margin-left: 80px;
+}

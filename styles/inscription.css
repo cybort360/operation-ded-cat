@@ -1,0 +1,11 @@
+@import url("base.css");
+
+.inscription {
+  text-align: center;
+  font-family: var(--body-font);
+}
+.inscription-image {
+  max-width: 1094px;
+  height: 588px;
+  margin-left: 250px;
+}

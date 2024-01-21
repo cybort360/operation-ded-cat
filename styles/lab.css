@@ -1,0 +1,25 @@
+@import url("base.css");
+
+h2 {
+  margin-top: -20px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 24px;
+  font-family: var(--body-font);
+  font-weight: 500;
+}
+
+.grey-container {
+  height: 552px;
+  width: 1026px;
+  background-color: #4d4d4d;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.para {
+  max-width: 1054px;
+  height: 354px;
+  font-size: 18px;
+  margin-top: 100px;
+}

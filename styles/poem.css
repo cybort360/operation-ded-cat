@@ -1,0 +1,15 @@
+@import url("base.css");
+
+.poem {
+  font-family: var(--body-font);
+  font-size: 24px;
+  line-height: 50px;
+  margin-top: 50px;
+}
+
+.poem-grey-container {
+  height: 447px;
+  width: 893px;
+  background-color: #4d4d4d;
+  margin: 0 auto;
+}

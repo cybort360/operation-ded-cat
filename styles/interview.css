@@ -1,0 +1,56 @@
+@import url("base.css");
+
+.interview-grey-container {
+  height: 447px;
+  width: 893px;
+  background-color: #4d4d4d;
+  margin: 0 auto;
+}
+
+.interview {
+  font-family: var(--body-font);
+}
+
+.interview-intro {
+  margin-left: 60px;
+}
+
+.interview-intro-header {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: var(--body-font);
+  text-align: center;
+}
+
+.interview-intro-body {
+  max-width: 1054px;
+  height: 192px;
+  font-family: var(--body-font);
+  margin-left: 150px;
+  font-size: 16px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.interview-main-header {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: var(--body-font);
+  margin-left: 210px;
+  margin-top: 50px;
+}
+
+.interview-main-body {
+  max-width: 1051px;
+  height: 1912px;
+  font-family: var(--body-font);
+  margin-left: 210px;
+  font-size: 16px;
+  text-align: left;
+  margin-top: 50px;
+}
+
+.rand,
+.el-thor {
+  font-weight: bold;
+}
