@@ -117,7 +117,7 @@ h1 {
   margin-top: 100px;
 }
 
-.main-video {
+iframe {
   height: 500px;
   width: 1000px;
   border-radius: 10px;
