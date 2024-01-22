@@ -73,6 +73,26 @@ nav {
   left: 25px;
 }
 
+.gap-one {
+  position: relative;
+  top: 10px;
+}
+
+.gap-two {
+  position: relative;
+  top: 20px;
+}
+
+.gap-three {
+  position: relative;
+  top: 30px;
+}
+
+.gap-four {
+  position: relative;
+  top: 40px;
+}
+
 .logo {
   height: 250px;
   grid-column: 3/2;
