@@ -35,7 +35,8 @@ h2 {
   margin-left: 80px;
 }
 
-.team-section a span {
+.team-section a span,
+.team-link {
   background-color: rgb(195, 60, 60);
   padding: 10px 15px;
   border-radius: 6px;
