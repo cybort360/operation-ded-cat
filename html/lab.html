@@ -61,19 +61,57 @@
         <source src="../images/opcat_lab.mp4" />
       </video>
     </div>
+    <h3>OP_CAT</h3>
     <p class="para">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at mauris sed lectus porttitor fringilla. Ut sed
-      purus vitae massa dapibus accumsan vitae eu eros. Fusce semper, risus ut luctus pellentesque, justo nunc
-      ullamcorper sem, ut porttitor neque dui id sem. Aliquam vitae ultrices ligula, ac aliquet turpis. Nulla non metus
-      a dolor vehicula tempus ac a erat. Suspendisse dignissim ullamcorper bibendum. In a ullamcorper diam. Sed sapien
-      nulla, lacinia at justo et, faucibus laoreet nunc. Vivamus laoreet turpis quis odio egestas, eu volutpat lacus
-      consectetur.<br />
-      Nullam eleifend purus id lorem iaculis, quis fringilla neque imperdiet. Integer vel lectus vitae eros imperdiet
-      placerat. Vivamus vitae varius dui. Sed dapibus, turpis eget tempor porta, urna augue elementum magna, ut bibendum
-      est lectus eu turpis. In hendrerit risus vel bibendum viverra. Suspendisse eget risus libero. Sed ut sapien sit
-      amet mi dapibus bibendum. Cras ornare fringilla leo, nec placerat arcu eleifend non. Donec tincidunt nisi et
-      semper sodales. Donec luctus nulla nulla, quis venenatis magna lobortis maximus. Nullam vel scelerisque velit.
+      OP_CAT was previously included in Bitcoin Script, but was disabled due to concerns over the potential of scripts
+      that grew too large. However, because of the addition of Tapscript's limitation on stack element size (520 bytes),
+      it is now once again feasible to reintroduce OP_CAT. Functionality wise, OP_CAT operation enables the
+      concatenation of two stack values. It fails if the stack has less than two values or the concatenated result
+      exceeds the 520-byte limit.
+      <br /><br />
     </p>
+    <div class="code-snippet">
+      <h3>Implementation details:</h3><br />
+      <pre>
+        case OP_CAT:
+  {
+      if (stack.size() < 2)
+          return set_error(serror, SCRIPT_ERR_INVALID_STACK_OPERATION);
+      valtype& vch1 = stacktop(-2);
+      valtype& vch2 = stacktop(-1);
+      if (vch1.size() + vch2.size() > MAX_SCRIPT_ELEMENT_SIZE)
+          return set_error(serror, SCRIPT_ERR_INVALID_STACK_OPERATION);
+      vch1.insert(vch1.end(), vch2.begin(), vch2.end());
+      stack.pop_back();
+  }
+  break;
+      </pre>
+    </div>
+    <div class="tree">
+    <h3>Tree Signature</h3>
+    <p class="para">
+    We can use OP_CAT to create tree signatures. By combining multiple signatures and concatenating them, we can have
+    more flexible multisigs. We are essentially creating a binary tree of signature, where each node is the
+    concatenation of its two children nodes. This process continues up the tree. The total concatenated signature will
+    be at the top of the tree (root) which we can then verify against the public key that represents the entire tree.
+    This increases efficiency and reduces size because it reduces the number of signatures required in a transaction.
+    This is a good way to use multisig wallets, where multiple users must authorize a transaction.
+  </p>
+  </div>
+  <div class="lamport">
+    <h3>Lamport Signature</h3>
+    <p class="para">
+    One potential concern as we advance technologically, specifically in regards to quantum computing, is how it can
+    affect and break modern cryptography. However, securing data with a Lamport signature is believed to be
+    quantum-resistant. Lamport signatures are one-time signatures that use a pair of large random numbers for each bit
+    of the key. They are resistant to quantum computer attacks. The implementation details include generating a random
+    set of numbers for each bit of the key. The message is then hashed, and using the hashed message, we select the
+    according digits from the sets from our private key. Using OP_CAT, we can concatenate these selected numbers to form
+    the Lamport signature. The public key is also derived from the private key, and verifiers can use the message’s hash
+    to compare them with the signature. There are some caveats with using Lamport signatures, however. These signatures
+    are significantly larger than traditional signatures, which may reduce blockchain efficiency/size.
+  </p>
+  </div>
     <footer>
       <div class="footer-images">
         <img src="../images/Logo-2x 1.png" alt="" class="footer-image-one" />
